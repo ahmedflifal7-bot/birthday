@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      color: #fff;
+      margin-top: 50px;
+      animation: glow 2s infinite alternate;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff6ec4; }
+      to { text-shadow: 0 0 30px #7873f5; }
+    }
+
+    img {
+      margin-top: 30px;
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    audio {
+      margin-top: 30px;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 2em;
+      color: red;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy 18th Birthday 🎂</h1>
+  <h2>بحبك ❤️</h2>
+
+  <!-- صورة -->
+  <img src="c:\Users\Elalamia\Pictures\Saved Pictures\so.jpeg" alt="Birthday Photo">
+
+  <!-- مشغل موسيقى -->
+  <audio controls autoplay loop>
+    <source src="d:\My Downloads\ssstik.io_1779733527166.mp3" type="audio/mpeg">
+    متأسف، المتصفح لا يدعم تشغيل الصوت.
+  </audio>
+
+  <!-- قلوب متحركة -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = window.innerHeight + "px";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
